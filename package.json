@@ -23,7 +23,7 @@
     "url": "https://github.com/JoeRoddy/react-native-leaderboard/issues"
   },
   "homepage": "https://github.com/JoeRoddy/react-native-leaderboard#readme",
-  "dependencies": {
+  "devDependencies": {
     "react": "^15.6.1",
     "react-native": "^0.47.2"
   }
