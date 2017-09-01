@@ -12,7 +12,7 @@ export default class Leaderboard extends Component {
     state = {
         sortedData: []
     }
-    
+
     static propTypes = {
         ...ViewPropTypes,
         //required
@@ -137,9 +137,10 @@ const styles = StyleSheet.create({
     },
     left: {
         flexDirection: 'row',
+        alignItems:'center'
     },
     rank: {
-        fontSize: 26,
+        fontSize: 17,
         fontWeight: 'bold',
         marginRight: 5,
     },
@@ -148,24 +149,25 @@ const styles = StyleSheet.create({
         paddingRight: 6
     },
     doubleDidget: {
-        paddingLeft: 5,
+        paddingLeft: 10,
+        paddingRight: 2,
     },
     label: {
-        fontSize: 26,
+        fontSize: 17,
         flex: 1,
         paddingRight: 80,
     },
     score: {
-        fontSize: 30,
+        fontSize: 20,
         fontWeight: 'bold',
         position: 'absolute',
         right: 15,
         paddingLeft: 15,
     },
     avatar: {
-        height: 40,
-        width: 40,
-        borderRadius: 40 / 2,
+        height: 30,
+        width: 30,
+        borderRadius: 30 / 2,
         marginRight: 10
     },
 });
