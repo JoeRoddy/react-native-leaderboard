@@ -8,7 +8,7 @@ const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
 const oddRowColor = "white";
 const evenRowColor = "#f2f5f7";
 
-export default class RnLeaderboard extends Component {
+export default class Leaderboard extends Component {
     static propTypes = {
         ...ViewPropTypes,
         //required
