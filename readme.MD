@@ -1,4 +1,4 @@
-# react-native-tag-autocomplete
+# react-native-leaderboard
 Simple and configurable leaderboard component for react native
 
 ### Up and Running
