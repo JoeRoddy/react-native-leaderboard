@@ -1,0 +1,30 @@
+{
+  "name": "react-native-leaderboard",
+  "version": "1.0.0",
+  "description": "Instant leaderboard for react native",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoeRoddy/react-native-leaderboard.git"
+  },
+  "keywords": [
+    "react",
+    "native",
+    "leaderboard",
+    "leaders",
+    "simple"
+  ],
+  "author": "mrjoeroddy@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JoeRoddy/react-native-leaderboard/issues"
+  },
+  "homepage": "https://github.com/JoeRoddy/react-native-leaderboard#readme",
+  "dependencies": {
+    "react": "^15.6.1",
+    "react-native": "^0.47.2"
+  }
+}
