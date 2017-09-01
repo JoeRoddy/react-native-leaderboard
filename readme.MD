@@ -1,5 +1,7 @@
 # react-native-leaderboard
-    Simple and configurable leaderboard component for react native
+Simple and configurable leaderboard component for react native
+
+![Example](example.gif)
 
 ### Up and Running
 
