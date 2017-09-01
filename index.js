@@ -16,11 +16,11 @@ export default class Leaderboard extends Component {
             PropTypes.array,
             PropTypes.object
         ]),
-        filterBy: PropTypes.string.isRequired,
+        sortBy: PropTypes.string.isRequired,
         labelBy: PropTypes.string.isRequired,
 
         //optional
-        filter: PropTypes.func,
+        sort: PropTypes.func,
         icon: PropTypes.string,
         onRowPress: PropTypes.func,
         renderItem: PropTypes.func,
@@ -33,28 +33,28 @@ export default class Leaderboard extends Component {
         evenRowColor: PropTypes.string,
     }
 
-    _filter = (data) => {
-        const filterBy = this.props.filterBy;
+    _sort = (data) => {
+        const sortBy = this.props.sortBy;
 
-        let filtered = [];
-        if (this.props.filter) {
-            return this.props.filter(data);
+        let sorted = [];
+        if (this.props.sort) {
+            return this.props.sort(data);
         } else if (typeof data === 'object') {
             let sortedKeys = data && Object.keys(data).sort((key1, key2) => {
-                return data[key2][filterBy] - data[key1][filterBy];
+                return data[key2][sortBy] - data[key1][sortBy];
             })
             return sortedKeys && sortedKeys.map(key => {
                 return data[key];
             })
         } else if (typeof data === 'array') {
             return data && data.sort((item1, item2) => {
-                return item2[filterBy] - item1[filterBy];
+                return item2[sortBy] - item1[sortBy];
             })
         }
     }
 
     _defaultRenderItem = (item, index) => {
-        const filterBy = this.props.filterBy;
+        const sortBy = this.props.sortBy;
         const evenColor = this.props.evenRowColor || evenRowColor;
         const oddColor = this.props.oddRowColor || oddRowColor;
 
@@ -80,7 +80,7 @@ export default class Leaderboard extends Component {
                 </View>
                 <Text style={[styles.score,
                 this.props.scoreStyle]}>
-                    {item[filterBy] || 0}
+                    {item[sortBy] || 0}
                 </Text>
             </View>
         );
@@ -98,8 +98,8 @@ export default class Leaderboard extends Component {
     }
 
     render() {
-        const filteredData = this._filter(this.props.data);
-        const dataSource = ds.cloneWithRows(filteredData);
+        const sortedData = this._sort(this.props.data);
+        const dataSource = ds.cloneWithRows(sortedData);
 
         return (
             <ListView

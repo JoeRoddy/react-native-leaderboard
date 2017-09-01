@@ -22,7 +22,7 @@ this.state = {
 }
 
 render() {
-  return <Leaderboard data={this.state.data} filterBy='highScore' labelBy='userName'/>
+  return <Leaderboard data={this.state.data} sortBy='highScore' labelBy='userName'/>
 }
 ```
 
@@ -30,12 +30,12 @@ render() {
 | Prop | Type | Required | Description |
 | :------------ |:---------------:|:------:| :-----|
 | data | array or object|yes| Object array or object of objects |
-| filterBy | string |yes| Data property that should be sorted and displayed
+| sortBy | string |yes| Data property that should be sorted and displayed
 | labelBy | string|yes | Data property that should be displayed to identify user |
 | icon | string |no| Data property that stores the avatar's URL |
 | onRowPress | function |no| Called when a row is clicked. Arguments: item, index. |
-| filter | function |no| Override the default filter behavior |
-| renderItem | function |no| Ovveride the default row. Arguments: item, index. |
+| sort | function |no| Override the default sort behavior |
+| renderItem | function |no| Overide the default row. Arguments: item, index. |
 | containerStyle | object |no| Style for the outer container (RN.View) |
 | rankStyle | object |no| Style for the displayed rank (RN.Text) |
 | labelStyle | object |no| Style for the displayed name (RN.Text)|

@@ -32,7 +32,7 @@ export default class AvatarAndClickable extends Component {
     render() {
         const props = {
             labelBy: 'name',
-            filterBy: 'score',
+            sortBy: 'score',
             data: this.state.data,
             icon: 'iconUrl',
             onRowPress: (item, index) => {
