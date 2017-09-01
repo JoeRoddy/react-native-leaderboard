@@ -1,7 +1,7 @@
 # react-native-leaderboard
 Simple and configurable leaderboard component for react native
 
-![](./example.gif | width=100)
+![](./example.gif)
 
 ### Up and Running
 
