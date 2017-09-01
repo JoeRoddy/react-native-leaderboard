@@ -9,6 +9,10 @@ const oddRowColor = "white";
 const evenRowColor = "#f2f5f7";
 
 export default class Leaderboard extends Component {
+    state = {
+        sortedData: []
+    }
+    
     static propTypes = {
         ...ViewPropTypes,
         //required
@@ -97,10 +101,19 @@ export default class Leaderboard extends Component {
             : this._defaultRenderItem(item, index);
     }
 
-    render() {
-        const sortedData = this._sort(this.props.data);
-        const dataSource = ds.cloneWithRows(sortedData);
+    componentWillMount() {
+        this.setState({ sortedData: this._sort(this.props.data) });
+    }
 
+    componentWillReceiveProps = (nextProps) => {
+        if (this.props.data !== nextProps.data) {
+            this.setState({ sortedData: this._sort(nextProps.data) });
+        }
+    }
+
+    render() {
+        const dataSource = ds.cloneWithRows(this.state.sortedData);
+        
         return (
             <ListView
                 style={this.props.containerStyle}
