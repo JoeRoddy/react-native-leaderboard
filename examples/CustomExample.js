@@ -92,7 +92,7 @@ export default class CustomExample extends Component {
         return (
             <View style={{ flex: 1, backgroundColor: 'white', }}>
                 {this.renderHeader()}
-                <RnLeaderboard {...props} />
+                <Leaderboard {...props} />
             </View>
         )
     }
