@@ -26,5 +26,8 @@
   "devDependencies": {
     "react": "^15.6.1",
     "react-native": "^0.47.2"
+  },
+  "dependencies": {
+    "prop-types": "^15.6.0"
   }
 }
