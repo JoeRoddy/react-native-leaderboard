@@ -136,6 +136,7 @@ export default class Leaderboard extends Component {
         style={this.props.containerStyle}
         dataSource={dataSource}
         renderRow={(data, someShit, i) => this._renderItem(data, i)}
+        enableEmptySections
       />
     );
   }
