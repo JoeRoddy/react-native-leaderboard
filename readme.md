@@ -18,7 +18,7 @@ import Leaderboard from 'react-native-leaderboard';
 this.state = {
     data: [
         {userName: 'Joe', highScore: 52},
-        {userName: 'Jenny', highScore: 120}
+        {userName: 'Jenny', highScore: 120},
         //...
     ] //can also be an object of objects!: data: {a:{}, b:{}}
 }
@@ -41,7 +41,7 @@ render() {
 | icon | string |no| Data property that stores the avatar's URL |
 | onRowPress | function |no| Called when a row is clicked. Arguments: item, index |
 | sort | function |no| Override the default sort behavior. Arguments: data |
-| renderItem | function |no| Overide the default row. Arguments: item, index |
+| renderItem | function |no| Override the default row. Arguments: item, index |
 | containerStyle | object |no| Style for the outer container (RN.View) |
 | rankStyle | object |no| Style for the displayed rank (RN.Text) |
 | labelStyle | object |no| Style for the displayed name (RN.Text)|
