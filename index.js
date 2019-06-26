@@ -14,7 +14,7 @@ const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
 const oddRowColor = "white";
 const evenRowColor = "#f2f5f7";
 
-export default class Leaderboard extends Component {
+export default class Leaderboard extends React.PureComponent {
   state = {
     sortedData: []
   };
@@ -27,6 +27,7 @@ export default class Leaderboard extends Component {
     labelBy: PropTypes.string.isRequired,
 
     //optional
+    scoreLabel: PropTypes.string,
     sort: PropTypes.func,
     icon: PropTypes.string,
     onRowPress: PropTypes.func,
@@ -73,7 +74,9 @@ export default class Leaderboard extends Component {
     const evenColor = this.props.evenRowColor || evenRowColor;
     const oddColor = this.props.oddRowColor || oddRowColor;
 
-    const rowColor = index % 2 === 0 ? evenColor : oddColor;
+
+      const rowColor = index % 2 === 0 ? evenColor : oddColor;
+      const scoreLabel = this.props.scoreLabel ? item[this.props.scoreLabel] : item[sortBy];
 
     const rowJSx = (
       <View style={[styles.row, { backgroundColor: rowColor }]} key={index}>
@@ -98,7 +101,8 @@ export default class Leaderboard extends Component {
           </Text>
         </View>
         <Text style={[styles.score, this.props.scoreStyle]}>
-          {item[sortBy] || 0}
+            {
+               scoreLabel || 0}
         </Text>
       </View>
     );
