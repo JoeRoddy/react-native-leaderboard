@@ -32,6 +32,7 @@ export default class Leaderboard extends Component {
     onRowPress: PropTypes.func,
     renderItem: PropTypes.func,
     containerStyle: PropTypes.object,
+    rowStyle: PropTypes.object,
     scoreStyle: PropTypes.object,
     rankStyle: PropTypes.object,
     labelStyle: PropTypes.object,
@@ -47,7 +48,7 @@ export default class Leaderboard extends Component {
     const rowColor = index % 2 === 0 ? evenColor : oddColor;
 
     const rowJSx = (
-      <View style={[styles.row, { backgroundColor: rowColor }]}>
+      <View style={[styles.row, this.props.rowStyle, { backgroundColor: rowColor }]}>
         <View style={styles.left}>
           <Text
             style={[
