@@ -166,7 +166,7 @@ const styles = StyleSheet.create({
   }
 });
 
-_sort = (data, sortBy, sort) => {
+const _sort = (data, sortBy, sort) => {
   if (sort) {
     return sort(data);
   } else if (typeof data === "object") {
